@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Place the CSS content here since you mentioned not using a link */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
+
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f7f7f7; /* Background color */
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
+      width: 300px; /* Adjust the width as needed */
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f7f7f7;
+    }
+
+    .form-control:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      background-color: #0eb7f4; /* Button background color */
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: opacity 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 1;
+    }
+
+    .btn:disabled {
+      background-color: #cccccc;
+    }
+  </style>
+  <title>Admin Login</title>
+</head>
+<body>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <h2>Admin Login</h2>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="Username" class="form-control" [(ngModel)]="Username" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="Password" class="form-control" [(ngModel)]="Password" required />
+    </div>
+    <button type="submit" class="btn" [disabled]="!loginForm.form.valid">Login</button>
+  </form>
+</body>
+</html>

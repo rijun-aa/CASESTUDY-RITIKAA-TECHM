@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Welcome to the Complaint Registration System</h1>
+  <button (click)="navigateTo('complaint-register')">Complaint Register</button>
+  <button (click)="navigateTo('customer-status-check')">Status Check</button>
+</div>
+
+<!-- Notification box -->
+<div *ngIf="notification" class="notification-box" role="alert">
+  {{ notification }}
+  <button type="button" class="close-button" aria-label="Close" (click)="closeNotification()">
+    close; <!-- Unicode character for cross symbol -->
+  </button>
+</div>
+
+<router-outlet></router-outlet>

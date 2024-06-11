@@ -1,0 +1,8 @@
+<!-- notification-popup.component.html -->
+<div class="notification-popup" *ngIf="isVisible">
+    <div class="notification-content">
+      <p>{{ message }}</p>
+      <button (click)="onClose()">Close</button>
+    </div>
+  </div>
+  
